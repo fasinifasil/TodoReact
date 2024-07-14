@@ -54,4 +54,9 @@ h2{
     flex: 1;
     align-items: center;
     cursor: pointer;
+    float: left;
+}
+.deleteicon{
+    margin-right: 5px;
+
 }
