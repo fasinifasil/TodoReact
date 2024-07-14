@@ -30,6 +30,17 @@ class Todopage extends Component {
       items: updatedItems
     });
   };
+  editItem = (index) => {
+    const { items } = this.state;
+    const editedItem = prompt("Edit your todo item:", items[index]);
+    if (editedItem !== null && editedItem.trim() !== "") {
+      const updatedItems = [...items];
+      updatedItems[index] = editedItem;
+      this.setState({
+        items: updatedItems
+      });
+    }
+  };
 
   render() {
     const { input, items } = this.state;
@@ -52,13 +63,14 @@ class Todopage extends Component {
           <div className='titlediv'>
             <ul>
               {items.map((item, index) => (
+                
                 <li key={index}>
                   {item}
                   <i
                     className="fa-regular fa-trash-can deleteicon"
                     onClick={() => this.deleteItem(index)}
                   ></i>
-                  <i className="fa-solid fa-pen-to-square"></i>
+                  <i className="fa-solid fa-pen-to-square" onClick={() => this.editItem(index)}></i>
                 </li>
               ))}
             </ul>

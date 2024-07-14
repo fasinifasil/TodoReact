@@ -60,3 +60,7 @@ h2{
     margin-right: 5px;
 
 }
+.titlediv i.editicon {
+    margin-left: 5px;
+    color: #1e90ff; /* Adjust color as per your design */
+  }
